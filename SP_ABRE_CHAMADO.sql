@@ -1,5 +1,5 @@
 
-ALTER PROC [dbo].[SPI_CHAMADO] 
+CREATE PROCEDURE [dbo].[SPI_CHAMADO] 
  (
 
 	
