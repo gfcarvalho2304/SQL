@@ -34,6 +34,8 @@ ALTER PROC [dbo].[SPI_CHAMADO]
  AS
 BEGIN
 
+    /*Objetivo: Inserir um novo chamado em uma tabela de chamados */
+
 	SET TRAN ISOLATION LEVEL READ UNCOMMITTED 
 	
 	------------------------------------------
@@ -85,8 +87,8 @@ BEGIN
     DECLARE @CD_EMPRESA_CLIENTE INT = (SELECT TOP 1 CD_EMPRESA FROM GRUPO_EMPRESA WHERE CD_GRUPO_EMPRESA = @CD_CLIENTE)
 
 	
-	----------------------------------------------	
-		   -- GERA 4 NÚMEROS ALEATÓRIOS --
+	----------------------------------------------	        /*De acordo com regra definida, o codigo do chamado deve conter a data de abertura
+		   -- GERA 4 NÚMEROS ALEATÓRIOS --                    concatenada à quatro números aleatórios */
 	----------------------------------------------	
    
     DECLARE @A INT = ABS (CHECKSUM(NEWID())) 
