@@ -98,7 +98,7 @@ BEGIN
 			UR.NOME                                                                                     AS 'RESPONSAVEL',
 			dbo.FN_SEGUNDOS_EM_HORAS(DATEDIFF(SECOND,SC.DATA_HORA_ABERTURA,SC.DH_INICIO_ATENDIMENTO))   AS 'TEMPO PARA INICIAR',
             /*Busca a diferença entre a data_hora da abertura e da data_hora do início do atendimento em segundos,
-            e em seguida a função FN_SEGUNDOS_EM_HORAS converte para horas, considerando somente horário comercial e dias úteis*/
+            e em seguida a função FN_SEGUNDOS_EM_HORAS converte para horas no formato hh:mm:ss */
 			dbo.FN_SEGUNDOS_EM_HORAS(DATEDIFF(SECOND,SC.DH_INICIO_ATENDIMENTO,DH_FIM_ATENDIMENTO))      AS 'TEMPO PARA SOLUÇÃO'
 		
 		FROM 
